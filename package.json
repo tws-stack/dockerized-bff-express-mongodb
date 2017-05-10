@@ -5,5 +5,20 @@
   "main": "app.js",
   "repository": "git@github.com:tws-stack/dockerlized-nodejs-dev-env.git",
   "author": "ThoughtWorks School <school-support@thoughtworks.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.6",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "standard": "^10.0.2",
+    "supertest": "^3.0.0",
+    "testdouble": "^2.1.2"
+  }
 }
