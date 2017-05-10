@@ -1,14 +1,14 @@
 {
-  "name": "dockerlized-nodejs-dev-env",
+  "name": "dockerlized-bff",
   "version": "1.0.0",
   "description": "A demo to show how to build a dockerlized Node.js development environment.",
   "main": "app.js",
-  "repository": "git@github.com:tws-stack/dockerlized-nodejs-dev-env.git",
+  "repository": "git@github.com:tws-stack/dockerlized-bff.git",
   "author": "ThoughtWorks School <school-support@thoughtworks.com>",
   "license": "GPL-3.0",
   "scripts": {
     "start": "nodemon --debug=5858 ./bin/www",
-    "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm start",
+    "debug": "DEBUG=dockerlized-bff:* npm start",
     "test": "standard && nodemon -x mocha ./tests/*",
     "it": "standard && nodemon -x mocha ./tests/integration-tests/*",
     "ut": "standard && nodemon -x mocha ./tests/unit-tests/*",
