@@ -1,0 +1,5 @@
+FROM web-development
+
+RUN yarn global add standard mocha
+
+CMD ["npm", "test"]

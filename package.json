@@ -7,11 +7,11 @@
   "author": "ThoughtWorks School <school-support@thoughtworks.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon --debug=5858 ./bin/www",
     "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm start",
-    "test": "standard && mocha ./tests/*",
-    "it": "standard && mocha ./tests/integration-tests/*",
-    "ut": "standard && mocha ./tests/unit-tests/*"
+    "test": "standard && nodemon -x mocha ./tests/*",
+    "it": "standard && nodemon -x mocha ./tests/integration-tests/*",
+    "ut": "standard && nodemon -x mocha ./tests/unit-tests/*"
   },
   "standard": {
     "globals": [ "describe", "it", "before", "beforeEach", "after", "afterEach" ]
