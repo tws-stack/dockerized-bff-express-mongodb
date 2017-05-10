@@ -6,6 +6,10 @@
   "repository": "git@github.com:tws-stack/dockerlized-nodejs-dev-env.git",
   "author": "ThoughtWorks School <school-support@thoughtworks.com>",
   "license": "GPL-3.0",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm run start"
+  },
   "dependencies": {
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
