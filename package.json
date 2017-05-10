@@ -8,7 +8,12 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm run start"
+    "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm start",
+    "test": "standard && mocha ./tests/*",
+    "itest": "standard && mocha ./tests/integration-tests/*"
+  },
+  "standard": {
+    "globals": [ "describe", "it" ]
   },
   "dependencies": {
     "body-parser": "^1.17.1",
