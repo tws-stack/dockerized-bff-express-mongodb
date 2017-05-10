@@ -11,7 +11,9 @@
     "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm start",
     "test": "standard && nodemon -x mocha ./tests/*",
     "it": "standard && nodemon -x mocha ./tests/integration-tests/*",
-    "ut": "standard && nodemon -x mocha ./tests/unit-tests/*"
+    "ut": "standard && nodemon -x mocha ./tests/unit-tests/*",
+    "it-ci": "standard && mocha ./tests/integration-tests/*",
+    "ut-ci": "standard && mocha ./tests/unit-tests/*"
   },
   "standard": {
     "globals": [ "describe", "it", "before", "beforeEach", "after", "afterEach" ]

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web-unit-test:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/Dockerfile.test
+    image: web-test
+    environment:
+      NODE_ENV: development
+    command: npm run ut-ci
+  web-integration-test:
+    image: web-test
+    depends_on:
+      - web-unit-test
+    environment:
+      NODE_ENV: development
+    command: npm run it-ci
