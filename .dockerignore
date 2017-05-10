@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+dockerfiles/
+node_modules/
+docker-compose.yml
+docker-compose.ci.yml
+docker-compose.production.yml
