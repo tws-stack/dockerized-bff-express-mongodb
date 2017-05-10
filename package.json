@@ -10,10 +10,11 @@
     "start": "nodemon ./bin/www",
     "debug": "DEBUG=dockerlized-nodejs-dev-env:* npm start",
     "test": "standard && mocha ./tests/*",
-    "itest": "standard && mocha ./tests/integration-tests/*"
+    "it": "standard && mocha ./tests/integration-tests/*",
+    "ut": "standard && mocha ./tests/unit-tests/*"
   },
   "standard": {
-    "globals": [ "describe", "it" ]
+    "globals": [ "describe", "it", "before", "beforeEach", "after", "afterEach" ]
   },
   "dependencies": {
     "body-parser": "^1.17.1",
