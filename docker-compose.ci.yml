@@ -4,12 +4,12 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: web-test
+    image: dockerlized-bff-test
     environment:
       NODE_ENV: development
     command: npm run ut-ci
   web-integration-test:
-    image: web-test
+    image: dockerlized-bff-test
     depends_on:
       - web-unit-test
     environment:

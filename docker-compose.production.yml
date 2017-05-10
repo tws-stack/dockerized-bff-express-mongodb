@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.production
-    image: web
+    image: dockerlized-bff-prod
     environment:
       NODE_ENV: production
       PORT: 8080
