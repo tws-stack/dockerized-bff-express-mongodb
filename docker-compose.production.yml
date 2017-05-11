@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.production
     image: dockerlized-bff-prod
+    links:
+      - db
     environment:
       NODE_ENV: production
       PORT: 8080
@@ -13,3 +15,9 @@ services:
     volumes:
       - .:/app
     command: ./bin/www
+  db:
+    image: mongo:3.4.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db:/data.db

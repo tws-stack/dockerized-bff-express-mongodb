@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.development
     image: dockerlized-bff-dev
+    links:
+      - db
     environment:
       NODE_ENV: development
     ports:
@@ -25,6 +27,8 @@ services:
     command: npm run ut
   web-integration-test:
     image: dockerlized-bff-test
+    links:
+      - db-test
     depends_on:
       - web-unit-test
     environment:
@@ -32,3 +36,12 @@ services:
     volumes:
       - .:/app
     command: npm run it
+  db:
+    image: mongo:3.4.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db:/data.db
+  db-test:
+    image: mongo:3.4.4
+    tmpfs: /data/db
