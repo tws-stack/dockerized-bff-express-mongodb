@@ -4,16 +4,19 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff-test
+    image: dockerlized-bff-unit-test
     environment:
       NODE_ENV: development
     command: npm run ut-ci
   web-integration-test:
-    image: dockerlized-bff-test
+    build:
+      context: .
+      dockerfile: ./dockerfiles/Dockerfile.test
+    image: dockerlized-bff-integration-test
     links:
       - db-test
     depends_on:
-      - web-unit-test
+      - db-test
     environment:
       NODE_ENV: development
     command: npm run it-ci

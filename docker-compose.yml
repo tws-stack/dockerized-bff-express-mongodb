@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.development
     image: dockerlized-bff-dev
+    depends_on:
+      - db
     links:
       - db
     environment:
@@ -19,18 +21,21 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff-test
+    image: dockerlized-bff-unit-test
     environment:
       NODE_ENV: development
     volumes:
       - .:/app
     command: npm run ut
   web-integration-test:
-    image: dockerlized-bff-test
+    build:
+      context: .
+      dockerfile: ./dockerfiles/Dockerfile.test
+    image: dockerlized-bff-integration-test
     links:
       - db-test
     depends_on:
-      - web-unit-test
+      - db-test
     environment:
       NODE_ENV: development
     volumes:
