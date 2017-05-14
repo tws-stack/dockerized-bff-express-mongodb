@@ -5,8 +5,6 @@ services:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.development
     image: dockerlized-bff-dev
-    depends_on:
-      - db
     links:
       - db
     environment:
@@ -17,36 +15,9 @@ services:
     volumes:
       - .:/app
     command: npm run debug
-  web-unit-test:
-    build:
-      context: .
-      dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff-unit-test
-    environment:
-      NODE_ENV: development
-    volumes:
-      - .:/app
-    command: npm run ut
-  web-integration-test:
-    build:
-      context: .
-      dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff-integration-test
-    links:
-      - db-test
-    depends_on:
-      - db-test
-    environment:
-      NODE_ENV: development
-    volumes:
-      - .:/app
-    command: npm run it
   db:
     image: mongo:3.4.4
     ports:
       - "27017:27017"
     volumes:
-      - ./db:/data.db
-  db-test:
-    image: mongo:3.4.4
-    tmpfs: /data/db
+      - ./db:/data/db
