@@ -14,10 +14,10 @@ services:
       dockerfile: ./dockerfiles/Dockerfile.test
     image: dockerlized-bff:integration-test
     links:
-      - db
+      - db_test
     environment:
       NODE_ENV: development
     command: npm run it-ci
-  db:
+  db_test:
     image: mongo:3.4.4
     tmpfs: /data/db
