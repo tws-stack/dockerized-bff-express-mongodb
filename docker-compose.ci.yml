@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web_unit_test:
+  web-unit-test:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
@@ -8,16 +8,16 @@ services:
     environment:
       NODE_ENV: development
     command: npm run ut-ci
-  web_integration_test:
+  web-integration-test:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
     image: dockerlized-bff:integration-test
     links:
-      - db_test
+      - db
     environment:
       NODE_ENV: development
     command: npm run it-ci
-  db_test:
+  db:
     image: mongo:3.4.4
     tmpfs: /data/db

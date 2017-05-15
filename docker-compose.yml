@@ -7,7 +7,7 @@ services:
     image: dockerlized-bff:dev
     links:
       - db
-      - db_test
+      - db-test
     environment:
       NODE_ENV: development
     ports:
@@ -22,7 +22,7 @@ services:
       - "27017:27017"
     volumes:
       - ./db:/data/db
-  db_test:
+  db-test:
     image: mongo:3.4.4
     ports:
       - "27018:27017"

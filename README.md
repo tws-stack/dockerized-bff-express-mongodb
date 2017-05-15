@@ -65,5 +65,4 @@ docker-compose build web
 
 ## 命名规范
 
-- image 和 tag 使用减号 `-` 分割的小写命名。
-- container 使用下划线 `_` 分割的小写命名。
+- image / tag / container 使用减号 `-` 分割的小写命名。
