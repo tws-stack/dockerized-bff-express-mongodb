@@ -1,18 +1,18 @@
 version: "3"
 services:
-  web-unit-test:
+  web_unit_test:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff-unit-test
+    image: dockerlized-bff:unit-test
     environment:
       NODE_ENV: development
     command: npm run ut-ci
-  web-integration-test:
+  web_integration_test:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff-integration-test
+    image: dockerlized-bff:integration-test
     links:
       - db
     environment:
