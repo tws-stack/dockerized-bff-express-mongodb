@@ -18,6 +18,13 @@ const env = app.get('env')
 const dbConfig = require('./configs/database.json')[env]
 mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`)
 
+const db = mongoose.connection
+db.on('error', console.error.bind(console, 'connection error:'))
+db.once('open', () => {
+  const debug = require('debug')('dockerlized-bff:database')
+  debug(`Database connected on mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`)
+})
+
 route.setRoutes(app)
 
 // catch 404 and forward to error handler
