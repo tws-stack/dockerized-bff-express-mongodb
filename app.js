@@ -2,6 +2,7 @@ const express = require('express')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 
 const route = require('./routes/route')
 
@@ -11,6 +12,11 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cookieParser())
+
+const env = app.get('env')
+
+const dbConfig = require('./configs/database.json')[env]
+mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`)
 
 route.setRoutes(app)
 
@@ -25,7 +31,7 @@ app.use((req, res, next) => {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (env === 'development') {
   app.use((err, req, res, next) => {
     res.status(err.status || 500)
     res.render('error', {

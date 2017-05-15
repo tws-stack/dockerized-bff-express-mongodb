@@ -6,7 +6,7 @@ services:
       dockerfile: ./dockerfiles/Dockerfile.test
     image: dockerlized-bff:unit-test
     environment:
-      NODE_ENV: development
+      NODE_ENV: test
     command: npm run ut-ci
   web-integration-test:
     build:
@@ -16,7 +16,7 @@ services:
     links:
       - db
     environment:
-      NODE_ENV: development
+      NODE_ENV: test
     command: npm run it-ci
   db:
     image: mongo:3.4.4

@@ -9,9 +9,9 @@
   "scripts": {
     "start": "nodemon --debug=5858 ./bin/www",
     "debug": "DEBUG=dockerlized-bff:* npm start",
-    "test": "standard && nodemon -x mocha ./tests/*",
-    "it": "standard && nodemon -x mocha ./tests/integration-tests/*",
-    "ut": "standard && nodemon -x mocha ./tests/unit-tests/*",
+    "test": "standard && NODE_ENV=test nodemon -x mocha ./tests/*",
+    "it": "standard && NODE_ENV=test nodemon -x mocha ./tests/integration-tests/*",
+    "ut": "standard && NODE_ENV=test nodemon -x mocha ./tests/unit-tests/*",
     "it-ci": "standard && mocha ./tests/integration-tests/*",
     "ut-ci": "standard && mocha ./tests/unit-tests/*"
   },
