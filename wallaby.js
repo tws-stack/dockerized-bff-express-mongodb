@@ -3,7 +3,8 @@ module.exports = function () {
     files: [
       'app.js',
       'controllers/**/*.js',
-      'routes/**/*.js'
+      'routes/**/*.js',
+      'configs/**/*.json'
     ],
 
     tests: [
