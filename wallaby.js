@@ -5,6 +5,7 @@ module.exports = function () {
     files: [
       'app.js',
       'controllers/**/*.js',
+      'models/**/*.js',
       'routes/**/*.js',
       'configs/**/*.json'
     ],
