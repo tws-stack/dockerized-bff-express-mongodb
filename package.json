@@ -16,13 +16,21 @@
     "ut-ci": "standard && mocha ./tests/unit-tests/*"
   },
   "standard": {
-    "globals": [ "describe", "it", "before", "beforeEach", "after", "afterEach" ]
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.6",
     "express": "^4.15.2",
+    "mongoose": "^4.9.9",
     "morgan": "^1.8.1"
   },
   "devDependencies": {
