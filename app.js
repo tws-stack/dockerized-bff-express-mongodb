@@ -15,14 +15,15 @@ app.use(cookieParser())
 
 const env = app.get('env')
 
-const dbConfig = require('./configs/database.json')[env]
-mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`)
+const dbConfig = require('config').get('database')
+const connectionString = `mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.name}`
+mongoose.connect(connectionString)
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
   const debug = require('debug')('dockerlized-bff:database')
-  debug(`Database connected on mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`)
+  debug(`Database connected on ${connectionString}`)
 })
 
 route.setRoutes(app)

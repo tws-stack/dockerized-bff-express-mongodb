@@ -51,6 +51,17 @@ docker-compose logs -f db
 docker-compose build web
 ```
 
+在本地跑继承测试时，需要在 `config` 目录下添加本地测试时的数据库连接配置，命名为 `test.json`：
+```json
+{
+    "database": {
+        "host": "localhost",
+        "port": 27018,
+        "name": "web"
+    }
+}
+```
+
 ## 编辑器支持
 
 ### VisualStudio Code

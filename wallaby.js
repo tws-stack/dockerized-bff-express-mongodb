@@ -7,7 +7,7 @@ module.exports = function () {
       'controllers/**/*.js',
       'models/**/*.js',
       'routes/**/*.js',
-      'configs/**/*.json'
+      'config/**/*.json'
     ],
 
     tests: [
