@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dockerlized-bff-express-mongodb" filepath="$PROJECT_DIR$/.idea/dockerlized-bff-express-mongodb" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dockerized-bff-express-mongodb.iml" filepath="$PROJECT_DIR$/.idea/dockerized-bff-express-mongodb.iml" />
     </modules>
   </component>
 </project>
