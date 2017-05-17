@@ -9,7 +9,7 @@ https://www.docker.com/community-edition
 ### 获取源代码
 
 ```bash
-git clone git@github.com:tws-stack/dockerlized-bff.git
+git clone git@github.com:tws-stack/dockerized-bff-express-mongodb.git
 ```
 
 ### 启动开发环境
