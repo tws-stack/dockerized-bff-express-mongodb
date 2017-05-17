@@ -22,7 +22,7 @@ mongoose.connect(connectionString)
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
-  const debug = require('debug')('dockerlized-bff:database')
+  const debug = require('debug')('dockerized-bff:database')
   debug(`Database connected on ${connectionString}`)
 })
 

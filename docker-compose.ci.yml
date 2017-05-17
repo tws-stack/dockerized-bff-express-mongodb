@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff:unit-test
+    image: dockerized-bff:unit-test
     environment:
       NODE_ENV: test
     command: yarn ut-ci
@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.test
-    image: dockerlized-bff:integration-test
+    image: dockerized-bff:integration-test
     links:
       - db
     environment:
