@@ -7,7 +7,7 @@ services:
     image: dockerlized-bff:unit-test
     environment:
       NODE_ENV: test
-    command: npm run ut-ci
+    command: yarn ut-ci
   web-integration-test:
     build:
       context: .
@@ -17,7 +17,7 @@ services:
       - db
     environment:
       NODE_ENV: test
-    command: npm run it-ci
+    command: yarn it-ci
   db:
     image: mongo:3.4.4
     tmpfs: /data/db
