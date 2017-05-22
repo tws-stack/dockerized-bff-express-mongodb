@@ -6,11 +6,3 @@ RUN yarn config set registry https://registry.npm.taobao.org
 RUN yarn global add nodemon
 
 ENV NODE_ENV=development
-
-COPY package.json yarn.lock /app/
-RUN yarn
-RUN mv /app/node_modules /node_modules
-
-COPY . /app
-
-CMD ["yarn", "debug"]

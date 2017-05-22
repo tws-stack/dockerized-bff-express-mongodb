@@ -6,7 +6,7 @@ services:
       dockerfile: ./dockerfiles/Dockerfile.test
     image: dockerized-bff:unit-test
     environment:
-      NODE_ENV: test
+      NODE_ENV: integration
     command: yarn ut-ci
   web-integration-test:
     build:
@@ -16,7 +16,7 @@ services:
     links:
       - db
     environment:
-      NODE_ENV: test
+      NODE_ENV: integration
     command: yarn it-ci
   db:
     image: mongo:3.4.4

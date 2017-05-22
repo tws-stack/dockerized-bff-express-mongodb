@@ -7,11 +7,10 @@
   "author": "ThoughtWorks School <school-support@thoughtworks.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "nodemon --debug=5858 ./bin/www",
-    "debug": "DEBUG=dockerized-bff:* yarn start",
-    "test": "standard && NODE_ENV=test nodemon -x mocha ./tests/*",
-    "it": "standard && NODE_ENV=test nodemon -x mocha ./tests/integration-tests/*",
-    "ut": "standard && NODE_ENV=test nodemon -x mocha ./tests/unit-tests/*",
+    "start": "nodemon --debug=5858 -x \"yarn && DEBUG=dockerized-bff:* ./bin/www\"",
+    "test": "standard && NODE_ENV=test mocha ./tests/*",
+    "it": "standard && NODE_ENV=test mocha ./tests/integration-tests/*",
+    "ut": "standard && NODE_ENV=test mocha ./tests/unit-tests/*",
     "it-ci": "standard && mocha ./tests/integration-tests/*",
     "ut-ci": "standard && mocha ./tests/unit-tests/*"
   },
@@ -37,7 +36,6 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.3.0",
-    "nodemon": "^1.11.0",
     "standard": "^10.0.2",
     "supertest": "^3.0.0",
     "testdouble": "^2.1.2"
