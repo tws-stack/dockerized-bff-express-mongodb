@@ -3,10 +3,8 @@ services:
   web-unit-test:
     build:
       context: .
-      dockerfile: ./dockerfiles/Dockerfile.test
+      dockerfile: ./dockerfiles/Dockerfile.integration
     image: dockerized-bff:unit-test
-    environment:
-      NODE_ENV: integration
     command: yarn ut-ci
   web-integration-test:
     build:
@@ -15,8 +13,6 @@ services:
     image: dockerized-bff:integration-test
     links:
       - db
-    environment:
-      NODE_ENV: integration
     command: yarn it-ci
   db:
     image: mongo:3.4.4
