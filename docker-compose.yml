@@ -11,19 +11,19 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - "3000:3000"
+      - "3010:3000"
       - "5858:5858"
     volumes:
       - .:/app
-    command: yarn start
+    command: yarn docker-command:dev
   db:
     image: mongo:3.4.4
     ports:
-      - "27017:27017"
+      - "27117:27017"
     volumes:
       - ./db:/data/db
   db-test:
     image: mongo:3.4.4
     ports:
-      - "27018:27017"
+      - "27118:27017"
     tmpfs: /data/db

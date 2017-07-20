@@ -1,23 +1,23 @@
 version: "3"
 services:
-  web:
+  web-production:
     build:
       context: .
       dockerfile: ./dockerfiles/Dockerfile.production
     image: dockerlized-bff:prod
     links:
-      - db
+      - db-production:db
     environment:
       NODE_ENV: production
       PORT: 8080
     ports:
-      - "8080:8080"
+      - "8180:8080"
     volumes:
       - .:/app
     command: ./bin/www
-  db:
+  db-production:
     image: mongo:3.4.4
     ports:
-      - "27017:27017"
+      - "28017:27017"
     volumes:
       - ./db:/data/db

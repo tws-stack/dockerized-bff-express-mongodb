@@ -9,7 +9,7 @@ services:
   web-integration-test:
     build:
       context: .
-      dockerfile: ./dockerfiles/Dockerfile.test
+      dockerfile: ./dockerfiles/Dockerfile.integration
     image: dockerized-bff:integration-test
     links:
       - db

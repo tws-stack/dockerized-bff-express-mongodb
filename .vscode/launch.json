@@ -2,14 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach",
             "type": "node",
             "request": "attach",
-            "port": 5858,
+            "name": "Attach to Remote",
             "address": "localhost",
-            "restart": true,
-            "sourceMaps": false,
-            "outFiles": [],
+            "port": 5858,
             "localRoot": "${workspaceRoot}",
             "remoteRoot": "/app"
         }
